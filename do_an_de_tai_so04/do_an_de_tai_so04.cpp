@@ -20,13 +20,13 @@ int main() {
     vector<Sach*>danhsachsach;
     int choice;
     do {
-        cout << "===============MENU==================\n";
-        cout << "1.Nhap du lieu tu file!" << endl;
-        cout << "2.hien thi danh sach muon doc" << endl;
-        cout << "3.Hien thi vao tep!" << endl;
-        cout << "4.thoat chuong trinh!" << endl;
-        cout << "====================================================" << endl;
-        cout << "moi nhap lua chon: ";
+        cout << "\t\t\t\t===============MENU=================================\n";
+        cout << "\t\t\t\t1.Nhap du lieu tu file!" << endl;
+        cout << "\t\t\t\t2.hien thi danh sach muon doc" << endl;
+        cout << "\t\t\t\t3.Hien thi vao tep!" << endl;
+        cout << "\t\t\t\t4.thoat chuong trinh!" << endl;
+        cout << "\t\t\t\t====================================================" << endl;
+        cout << "\t\t\t\tmoi nhap lua chon: ";
         cin >> choice;
         switch (choice) {
         case 1: {
@@ -88,10 +88,10 @@ int main() {
                 inputFile.close();
             }
             else {
-                cout << "Khong the mo file data.txt" << endl;
+                cout << "\t\t\t\tKhong the mo file data.txt" << endl;
                 return 0;
             }
-            cout << "nap du lieu thanh cong!" << endl;
+            cout << "\t\t\t\tnap du lieu thanh cong!" << endl;
             break;
         }
         case 2: {
@@ -145,13 +145,13 @@ int main() {
             }
 
             outputfile.close();
-            cout << "\nDA HIEN THI RA FILE HIENTHI.TXT!" << endl;
+            cout << "\n\t\t\t\tDA HIEN THI RA FILE HIENTHI.TXT!" << endl;
             break;
         }
         case 4:
             break;
         default:
-            cout << "lua chon khong hop le!" << endl;
+            cout << "\t\t\t\tlua chon khong hop le!" << endl;
         }
     } while (choice != 4);
     system("pause");
