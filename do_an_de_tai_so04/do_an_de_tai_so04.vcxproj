@@ -129,6 +129,13 @@
   <ItemGroup>
     <ClCompile Include="do_an_de_tai_so04.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="data.txt" />
+    <Text Include="hienthi.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="doAn04.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
