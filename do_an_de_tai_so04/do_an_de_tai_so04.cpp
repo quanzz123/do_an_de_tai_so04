@@ -108,21 +108,38 @@ int main() {
         case 3: {
             ofstream outputfile("hienthi.txt");
             if (outputfile.is_open()) {
-                outputfile << "\t\t\t=========hien thi danh sach muon ve =========" << endl;
+                outputfile << "\t\t\t=========hien thi danh sach muon doc =========" << endl;
                 for (const auto& sach : danhsachsach) {
                     SachMuonDoc* sachmuondoc = dynamic_cast<SachMuonDoc*>(sach);
                     if (sachmuondoc != nullptr) {
-                        outputfile << setw(5) << left << sachmuondoc->getMaSoSach()
+                        outputfile << setw(10) << left << sachmuondoc->getMaSoSach()
                             << setw(10) << left << sachmuondoc->getTenSach()
                             << setw(15) << left << sachmuondoc->getChuDe()
                             << setw(10) << left << sachmuondoc->getTacGia()
-                            << setw(25) << left << sachmuondoc->getNhaXuatBan()
+                            << setw(30) << left << sachmuondoc->getNhaXuatBan()
                             << setw(15) << left << sachmuondoc->getNgayXuatBan()
                             << setw(5) << left << sachmuondoc->getphuongthuc()
                             << setw(5) << left << sachmuondoc->getSoTrang()
                             << setw(5) << left << sachmuondoc->getSoBanLuu()
                             << setw(7) << left << sachmuondoc->getGioMuon()
                             << setw(7) << left << sachmuondoc->getGioTra() << endl;
+                    }
+                }
+                outputfile << "\n\n\t\t========= hien thi danh sach muon ve =========" << endl;
+                for (const auto& sach : danhsachsach) {
+                    SachMuonVe* sachmuonve = dynamic_cast<SachMuonVe*>(sach);
+                    if (sachmuonve != nullptr) {
+                        outputfile << setw(10) << left << sachmuonve->getMaSoSach()
+                            << setw(10) << left << sachmuonve->getTenSach()
+                            << setw(15) << left << sachmuonve->getChuDe()
+                            << setw(10) << left << sachmuonve->getTacGia()
+                            << setw(30) << left << sachmuonve->getNhaXuatBan()
+                            << setw(15) << left << sachmuonve->getNgayXuatBan()
+                            << setw(5) << left << sachmuonve->getphuongthuc()
+                            << setw(5) << left << sachmuonve->getSoTrang()
+                            << setw(5) << left << sachmuonve->getSoBanLuu()
+                            << setw(15) << left << sachmuonve->getNgayMuon()
+                            << setw(15) << left << sachmuonve->getNgayHenTra() << endl;
                     }
                 }
             }
