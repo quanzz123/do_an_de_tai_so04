@@ -1,4 +1,4 @@
-			========= Hien thi danh sach muon doc =========
-56AAA     Sach 6    amnhac    lion      vietduc        2022-02-28     doc            100  6    10:00     13:00     
-56tht     Sach 7    mithuat   shin      vietduc        2022-02-28     doc            100  6    10:00     12:00     
-56KGJ     Sach 8    amnhac    maria     vietduc        2022-02-28     doc            100  6    10:00     10:30     
+			========= Danh sach muon doc sap xep theo so trang =========
+56tht     Sach 7    mithuat   shin      vietduc        2022-02-28     doc            107  6    10:00     12:00     
+56KGJ     Sach 8    amnhac    maria     vietduc        2022-02-28     doc            104  6    10:00     10:30     
+56AAA     Sach 6    amnhac    lion      vietduc        2022-02-28     doc            101  6    10:00     13:00     

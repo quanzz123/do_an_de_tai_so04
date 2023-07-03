@@ -47,8 +47,49 @@ void timKiemThongTin_nxb(const vector<Sach*>& danhSachSach, const string& nxb) {
         cout << "Khong tim thay sach voi ten '" << nxb << "'" << endl << endl;
     }
 }
-bool sapxep(Sach& A, Sach& B) {
-    return A.getSoTrang() < B.getSoTrang();
+
+void sap_xep_theo_so_trang_Sach_muon_doc_giamdan(vector<SachMuonDoc>& arr)
+{
+    for (int i = 0; i > arr.size() - 1; i++)
+    {
+        for (int j = i + 1; j > arr.size(); j++)
+        {
+            if (arr[j].getSoTrang() < arr[i].getSoTrang())
+            {
+                SachMuonDoc bientam = arr[i];
+                arr[i] = arr[j];
+                arr[j] = bientam;
+            }
+        }
+    }
+}
+void sapXepTheoSoTrangSachMuonDocGiamDan(vector<Sach*>& danhSachSach) {
+    for (int i = 0; i < danhSachSach.size() - 1; i++) {
+        for (int j = i + 1; j < danhSachSach.size(); j++) {
+            SachMuonDoc* sach1 = dynamic_cast<SachMuonDoc*>(danhSachSach[i]);
+            SachMuonDoc* sach2 = dynamic_cast<SachMuonDoc*>(danhSachSach[j]);
+
+            if (sach1 != nullptr && sach2 != nullptr) {
+                if (sach1->getSoTrang() < sach2->getSoTrang()) {
+                    swap(danhSachSach[i], danhSachSach[j]);
+                }
+            }
+        }
+    }
+}
+void sapXepTheoSoTrangSachMuonVeGiamDan(vector<Sach*>& danhSachSach) {
+    for (int i = 0; i < danhSachSach.size() - 1; i++) {
+        for (int j = i + 1; j < danhSachSach.size(); j++) {
+            SachMuonVe* sach1 = dynamic_cast<SachMuonVe*>(danhSachSach[i]);
+            SachMuonVe* sach2 = dynamic_cast<SachMuonVe*>(danhSachSach[j]);
+
+            if (sach1 != nullptr && sach2 != nullptr) {
+                if (sach1->getSoTrang() < sach2->getSoTrang()) {
+                    swap(danhSachSach[i], danhSachSach[j]);
+                }
+            }
+        }
+    }
 }
 int main() {
     vector<Sach*>danhsachsach;
@@ -58,8 +99,9 @@ int main() {
         cout << "\t\t\t\t1.Nhap du lieu tu file!" << endl;
         cout << "\t\t\t\t2.hien thi danh sach muon doc" << endl;
         cout << "\t\t\t\t3.Hien thi danh sach muon ve" << endl;
-        cout << "\t\t\t\t4.Hien thi vao tep!" << endl;
-        cout << "\t\t\t\t5.thoat chuong trinh!" << endl;
+        cout << "\t\t\t\t4.Tim kiem!" << endl;
+        cout << "\t\t\t\t5.Thong ke theo tieu chi!" << endl;
+        cout << "\t\t\t\t6.thoat!" << endl;
         cout << "\t\t\t\t====================================================" << endl;
         cout << "\t\t\t\tmoi nhap lua chon: ";
         cin >> choice;
@@ -277,36 +319,24 @@ int main() {
                     }
                     else {
                         // Sắp xếp danh sách sách mượn đọc theo số trang tăng dần
-                        vector<SachMuonDoc*> sachmuondocList;
+                       /* vector<SachMuonDoc*> sachmuondocList;
                         for (const auto& sach : danhsachsach) {
                             SachMuonDoc* sachmuondoc = dynamic_cast<SachMuonDoc*>(sach);
                             if (sachmuondoc != nullptr) {
                                 sachmuondocList.push_back(sachmuondoc);
                             }
-                        }
+                        }*/
                         // Bubble Sort để sắp xếp danh sách
-                        for (int i = 0; i < sachmuondocList.size() - 1; i++) {
-                            for (int j = 0; j < sachmuondocList.size() - i - 1; j++) {
-                                if (sapxep(sachmuondocList[j], sachmuondocList[j + 1])) {
-                                    swap(sachmuondocList[j], sachmuondocList[j + 1]);
-                                }
-                            }
-                        }
-
-                        // In danh sách đã sắp xếp ra tệp tin
-                        ofstream outputFile("hienthi.txt");
-                        if (outputFile.is_open()) {
-                            outputFile << "\t\t\t========= Danh sach muon doc sap xep theo so trang =========" << endl;
-                            for (const auto& sachmuondoc : sachmuondocList) {
+                        sapXepTheoSoTrangSachMuonDocGiamDan(danhsachsach);
+                        cout << "============DACH SACH SACH MUON DOC========\n\n" << endl;
+                        for (const auto& sach : danhsachsach) {
+                            SachMuonDoc* sachmuondoc = dynamic_cast<SachMuonDoc*>(sach);
+                            if (sachmuondoc != nullptr) {
                                 sachmuondoc->hienThiThongTin();
-                                outputFile << endl;
+
+                                cout << endl;
                             }
-                            outputFile.close();
-                            cout << "Da ghi danh sach muon doc sap xep theo so trang ra tep tin sachmuondoc_sorted.txt" << endl;
-                        }
-                        else {
-                            cout << "Khong the mo tep tin sachmuondoc_sorted.txt" << endl;
-                        }
+                        }                        
                     }
                     break;
                 }
