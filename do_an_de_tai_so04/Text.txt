@@ -1,56 +1,4 @@
-﻿#include "doAn04.h"
-void timKiemThongTin_tg(const vector<Sach*>& danhSachSach, const string& TimKiemTG) {
-    bool timThay = false;
-
-    cout << "Thong tin cac sach tim thay:\n\n" << endl;
-    for (const auto& Sach : danhSachSach) {
-        if (Sach->getTacGia() == TimKiemTG) {
-            Sach->hienThiThongTin();
-            cout << endl;
-            timThay = true;
-        }
-    }
-
-    if (!timThay) {
-        cout << "Khong tim thay sach voi ten '" << TimKiemTG << "'" << endl << endl;
-    }
-}
-void timKiemThongTin_ma(const vector<Sach*>& danhSachSach, const string& ma_sach) {
-    bool timThay = false;
-
-    cout << "Thong tin cac sach tim thay:\n\n" << endl;
-    for (const auto& Sach : danhSachSach) {
-        if (Sach->getMaSoSach() == ma_sach) {
-            Sach->hienThiThongTin();
-            cout << endl;
-            timThay = true;
-        }
-    }
-
-    if (!timThay) {
-        cout << "Khong tim thay sach voi ten '" << ma_sach << "'" << endl << endl;
-    }
-}
-void timKiemThongTin_nxb(const vector<Sach*>& danhSachSach, const string& nxb) {
-    bool timThay = false;
-
-    cout << "Thong tin cac sach tim thay:\n\n" << endl;
-    for (const auto& Sach : danhSachSach) {
-        if (Sach->getNhaXuatBan() == nxb) {
-            Sach->hienThiThongTin();
-            cout << endl;
-            timThay = true;
-        }
-    }
-
-    if (!timThay) {
-        cout << "Khong tim thay sach voi ten '" << nxb << "'" << endl << endl;
-    }
-}
-bool sapxep(Sach& A, Sach& B) {
-    return A.getSoTrang() < B.getSoTrang();
-}
-int main() {
+﻿int main() {
     vector<Sach*>danhsachsach;
     int choice;
     do {
@@ -215,115 +163,20 @@ int main() {
             int choice4;
             do {
                 cout << "TIM KIEM THEO TIEU CHI" << endl;
-                cout << "1.tim kiem theo ten tac gia" << endl;
-                cout << "2.tim kiem theo ma sach" << endl;
-                cout << "3.tim kem theo nha xuat ban" << endl;
-                cout << "4.quay lai" << endl;
-                cout << "Nhap lua chon: ";
-                cin >> choice4;
-                switch (choice4)
-                {
-                case 1: {
-                    system("cls");
-                    string name_tg;
-                    cout << "Nhap ten tac gia: ";
-                    cin.ignore();
-                    getline(cin, name_tg);
-                    timKiemThongTin_tg(danhsachsach, name_tg);
-                    break;
-                }
-                case 2: {
-                    system("cls");
-                    string ma;
-                    cout << "Nhap ma can tim: ";
-                    cin.ignore();
-                    getline(cin, ma);
-                    timKiemThongTin_ma(danhsachsach, ma);
-                    break;
-                }
-                case 3: {
-                    system("cls");
-                    string name_nxb;
-                    cout << "Nhap ten nxb can tim: ";
-                    cin.ignore();
-                    getline(cin, name_nxb);
-                    timKiemThongTin_nxb(danhsachsach, name_nxb);
-                }
-                case 4: {
-                    break;
-                }
-                default:
-                    break;
-                }
-            } while (choice4 != 4);
+                cout << "tim kiem theo ten tac gia" << endl;
+                cout << "tim kiem theo ma sach" << endl;
+                cout << "tim kem theo nha xuat ban" << endl;
+            } while ();
             break;
         }
-        case 5: {
-            system("cls");
-            int choice5;
-            do {
-                cout << "THONG KE THEO TIEU CHI" << endl;
-                cout << "1.thong ke danh sach tang dan so trang sach muon doc" << endl;
-                cout << "2.thong ke danh sach tang dan so trang sach muon ve" << endl;
-                cout << "3.thoat" << endl;
-                cout << "moi nhap lua chon: ";
-                cin >> choice5;
-                switch (choice5)
-                {
-                case 1: {
-                    system("cls");
-                    if (danhsachsach.empty()) {
-                        cout << "\t\t\t\tchua co du lieu! Hay them du lieu tu chuc nang 1!" << endl;
-                    }
-                    else {
-                        // Sắp xếp danh sách sách mượn đọc theo số trang tăng dần
-                        vector<SachMuonDoc*> sachmuondocList;
-                        for (const auto& sach : danhsachsach) {
-                            SachMuonDoc* sachmuondoc = dynamic_cast<SachMuonDoc*>(sach);
-                            if (sachmuondoc != nullptr) {
-                                sachmuondocList.push_back(sachmuondoc);
-                            }
-                        }
-                        // Bubble Sort để sắp xếp danh sách
-                        for (int i = 0; i < sachmuondocList.size() - 1; i++) {
-                            for (int j = 0; j < sachmuondocList.size() - i - 1; j++) {
-                                if (sapxep(sachmuondocList[j], sachmuondocList[j + 1])) {
-                                    swap(sachmuondocList[j], sachmuondocList[j + 1]);
-                                }
-                            }
-                        }
-
-                        // In danh sách đã sắp xếp ra tệp tin
-                        ofstream outputFile("hienthi.txt");
-                        if (outputFile.is_open()) {
-                            outputFile << "\t\t\t========= Danh sach muon doc sap xep theo so trang =========" << endl;
-                            for (const auto& sachmuondoc : sachmuondocList) {
-                                sachmuondoc->hienThiThongTin();
-                                outputFile << endl;
-                            }
-                            outputFile.close();
-                            cout << "Da ghi danh sach muon doc sap xep theo so trang ra tep tin sachmuondoc_sorted.txt" << endl;
-                        }
-                        else {
-                            cout << "Khong the mo tep tin sachmuondoc_sorted.txt" << endl;
-                        }
-                    }
-                    break;
-                }
-                default:
-                    break;
-                }
-            } while (choice5 != 3);
-            break;
-        }
-        case 6:
+        case 5:
             cout << "\t\t\t\tket thuc chuong trinh!" << endl;
             exit(1);
             break;
         default:
             cout << "\t\t\t\tlua chon khong hop le!" << endl;
         }
-    } while (choice != 6);
+    } while (choice != 5);
     system("pause");
     return 0;
 }

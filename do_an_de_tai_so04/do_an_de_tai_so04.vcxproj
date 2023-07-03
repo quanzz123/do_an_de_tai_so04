@@ -132,6 +132,7 @@
   <ItemGroup>
     <Text Include="data.txt" />
     <Text Include="hienthi.txt" />
+    <Text Include="Text.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doAn04.h" />

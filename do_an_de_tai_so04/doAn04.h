@@ -4,9 +4,10 @@
 #include <string>
 #include <sstream>
 #include<iomanip>
+#include <algorithm>
 
 using namespace std;
-
+bool check1;
 class Sach {
 protected:
     string maSoSach;
@@ -34,15 +35,27 @@ public:
     }
 
     virtual void hienThiThongTin() {
-        cout << "ma so sach: " << maSoSach << endl;
-        cout << "Ten sach: " << tenSach << endl;
-        cout << "Chu de: " << chuDe << endl;
-        cout << "Tac gia: " << tacGia << endl;
-        cout << "nha xuat ban: " << nhaXuatBan << endl;
-        cout << "ngay xuat ban: " << ngayXuatBan << endl;
-        cout << "phuong thuc: " << phuongthuc << endl;
-        cout << "So trang: " << soTrang << endl;
-        cout << "So ban luu thu vien: " << soBanLuu << endl;
+        cout << setw(10) << left << maSoSach;
+        cout << setw(10) << left << tenSach;
+        cout << setw(10) << left << chuDe;
+        cout << setw(10) << left << tacGia;
+        cout << setw(15) << left << nhaXuatBan;
+        cout << setw(15) << left << ngayXuatBan;
+        cout << setw(15) << left << phuongthuc;
+        cout << setw(5) << left << soTrang;
+        cout << setw(5) << left << soBanLuu;
+
+    }
+    virtual void hienthirafile(ofstream& file) {
+        file << setw(10) << left << maSoSach
+         << setw(10) << left << tenSach
+         << setw(10) << left << chuDe
+         << setw(10) << left << tacGia
+         << setw(15) << left << nhaXuatBan
+         << setw(15) << left << ngayXuatBan
+         << setw(15) << left << phuongthuc
+         << setw(5) << left << soTrang
+         << setw(5) << left << soBanLuu;
     }
     // Getter và Setter cho các thuộc tính
 
@@ -132,8 +145,13 @@ public:
 
     void hienThiThongTin() override {
         Sach::hienThiThongTin();
-        cout << "Ngay muon: " << ngayMuon << endl;
-        cout << "Ngay hen tra: " << ngayHenTra << endl;
+        cout << setw(15) << left << ngayMuon;
+        cout << setw(15) << left << ngayHenTra;
+    }
+    void hienthirafile(ofstream& file) {
+        Sach::hienthirafile(file);
+        file << setw(15) << left << ngayMuon
+        << setw(15) << left << ngayHenTra;
     }
     string getNgayMuon() {
         return ngayMuon;
@@ -156,8 +174,13 @@ public:
     }
     void hienThiThongTin() override {
         Sach::hienThiThongTin();
-        cout << "Gio muon doc: " << gioMuon << endl;
-        cout << "Gio tra: " << gioTra << endl;
+        cout << setw(10) << left << gioMuon;
+        cout << setw(10) << left << gioTra;
+    }
+    void hienthirafile(ofstream& file) {
+        Sach::hienthirafile(file);
+        file << setw(10) << left << gioMuon
+        << setw(10) << left << gioTra;
     }
     string getGioMuon() {
         return gioMuon;
@@ -165,4 +188,6 @@ public:
     string getGioTra() {
         return gioTra;
     }
+   
+
 };

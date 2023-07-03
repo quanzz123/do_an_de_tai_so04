@@ -26,6 +26,9 @@
     <Text Include="hienthi.txt">
       <Filter>Source Files</Filter>
     </Text>
+    <Text Include="Text.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doAn04.h">
