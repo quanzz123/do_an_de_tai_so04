@@ -209,6 +209,19 @@ int main() {
                 ofstream outputFile("hienthi.txt");
                 if (outputFile.is_open()) {
                     outputFile << "\t\t\t========= HIEN THI DANH SACH MUON VE =========\n\n" << endl;
+                    cout << "+" << setfill('-') << setw(135) << "-" << "+" << endl;
+                    cout << setfill(' ');
+                    cout << "|" << setw(10) << left << "MSS";
+                    cout << "|" << setw(10) << left << "NAME";
+                    cout << "|" << setw(10) << left << "TOPIC";
+                    cout << "|" << setw(10) << left << "TG";
+                    cout << "|" << setw(15) << left << "NXB";
+                    cout << "|" << setw(15) << left << "DATEXB";
+                    cout << "|" << setw(15) << left << "STA";
+                    cout << "|" << setw(5) << left << "ST";
+                    cout << "|" << setw(5) << left << "SBL";
+                    cout << "|" << setw(15) << left << "MUON";
+                    cout << "|" << setw(15) << left << "TRA" << "|" << endl;
                     for (const auto& sach : danhsachsach) {
                         SachMuonVe* sachmuonve = dynamic_cast<SachMuonVe*>(sach);
                         if (sachmuonve != nullptr) {
