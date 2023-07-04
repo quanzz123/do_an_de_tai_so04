@@ -35,27 +35,29 @@ public:
     }
 
     virtual void hienThiThongTin() {
-        cout << setw(10) << left << maSoSach;
-        cout << setw(10) << left << tenSach;
-        cout << setw(10) << left << chuDe;
-        cout << setw(10) << left << tacGia;
-        cout << setw(15) << left << nhaXuatBan;
-        cout << setw(15) << left << ngayXuatBan;
-        cout << setw(15) << left << phuongthuc;
-        cout << setw(5) << left << soTrang;
-        cout << setw(5) << left << soBanLuu;
+        
+        cout << "|" << setw(10) << left << maSoSach;
+        cout << "|" << setw(10) << left << tenSach;
+        cout << "|" << setw(10) << left << chuDe;
+        cout << "|" << setw(10) << left << tacGia;
+        cout << "|" << setw(15) << left << nhaXuatBan;
+        cout << "|" << setw(15) << left << ngayXuatBan;
+        cout << "|" << setw(15) << left << phuongthuc;
+        cout << "|" << setw(5) << left << soTrang;
+        cout << "|" << setw(5) << left << soBanLuu;
 
     }
     virtual void hienthirafile(ofstream& file) {
-        file << setw(10) << left << maSoSach
-         << setw(10) << left << tenSach
-         << setw(10) << left << chuDe
-         << setw(10) << left << tacGia
-         << setw(15) << left << nhaXuatBan
-         << setw(15) << left << ngayXuatBan
-         << setw(15) << left << phuongthuc
-         << setw(5) << left << soTrang
-         << setw(5) << left << soBanLuu;
+      
+        file << "|" << setw(10) << left << maSoSach
+        << "|" << setw(10) << left << tenSach
+        << "|" << setw(10) << left << chuDe
+        << "|" << setw(10) << left << tacGia
+        << "|" << setw(15) << left << nhaXuatBan
+        << "|" << setw(15) << left << ngayXuatBan
+        << "|" << setw(15) << left << phuongthuc
+        << "|" << setw(5) << left << soTrang
+        << "|" << setw(5) << left << soBanLuu;
     }
     // Getter và Setter cho các thuộc tính
 
@@ -144,14 +146,58 @@ public:
     }
 
     void hienThiThongTin() override {
+        cout << "|" << setfill('-') << setw(10) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(10) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(10) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(10) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(15) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(15) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(15) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(5) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(5) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(15) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(15) << "-" << "|" << endl;
+        cout << setfill(' ');
         Sach::hienThiThongTin();
-        cout << setw(15) << left << ngayMuon;
-        cout << setw(15) << left << ngayHenTra;
+        cout << "|" << setw(15) << left << ngayMuon;
+        cout << "|" << setw(15) << left << ngayHenTra << "|";
     }
     void hienthirafile(ofstream& file) {
+        file << "|" << setfill('-') << setw(10) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(10) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(10) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(10) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(15) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(15) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(15) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(5) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(5) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(15) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(15) << "-" << "|" << endl;
+        file << setfill(' ');
         Sach::hienthirafile(file);
-        file << setw(15) << left << ngayMuon
-        << setw(15) << left << ngayHenTra;
+        file << "|" << setw(15) << left << ngayMuon
+            << "|" << setw(15) << left << ngayHenTra << "|";
     }
     string getNgayMuon() {
         return ngayMuon;
@@ -173,14 +219,57 @@ public:
         this->gioTra = gioTra;
     }
     void hienThiThongTin() override {
+        cout << "|" << setfill('-') << setw(10) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(10) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(10) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(10) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(15) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(15) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(15) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(5) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(5) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(15) << "-" << "|";
+        cout << setfill(' ');
+        cout << setfill('-') << setw(15) << "-" << "|" << endl;
+        cout << setfill(' ');
         Sach::hienThiThongTin();
-        cout << setw(10) << left << gioMuon;
-        cout << setw(10) << left << gioTra;
+        
     }
     void hienthirafile(ofstream& file) {
+        file << "|" << setfill('-') << setw(10) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(10) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(10) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(10) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(15) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(15) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(15) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(5) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(5) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(15) << "-" << "|";
+        file << setfill(' ');
+        file << setfill('-') << setw(15) << "-" << "|" << endl;
+        file << setfill(' ');
         Sach::hienthirafile(file);
-        file << setw(10) << left << gioMuon
-        << setw(10) << left << gioTra;
+        file << "|" << setw(10) << left << gioMuon
+            << "|" << setw(10) << left << gioTra << "|";
     }
     string getGioMuon() {
         return gioMuon;
