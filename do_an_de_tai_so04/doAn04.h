@@ -242,7 +242,8 @@ public:
         cout << setfill('-') << setw(15) << "-" << "|" << endl;
         cout << setfill(' ');
         Sach::hienThiThongTin();
-        
+        cout << "|" << setw(15) << left << gioMuon;
+        cout << "|" << setw(15) << left << gioTra << "|";
     }
     void hienthirafile(ofstream& file) {
         file << "|" << setfill('-') << setw(10) << "-" << "|";
@@ -268,8 +269,8 @@ public:
         file << setfill('-') << setw(15) << "-" << "|" << endl;
         file << setfill(' ');
         Sach::hienthirafile(file);
-        file << "|" << setw(10) << left << gioMuon
-            << "|" << setw(10) << left << gioTra << "|";
+        file << "|" << setw(15) << left << gioMuon
+            << "|" << setw(15) << left << gioTra << "|";
     }
     string getGioMuon() {
         return gioMuon;

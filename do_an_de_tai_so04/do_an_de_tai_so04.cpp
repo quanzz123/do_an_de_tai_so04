@@ -3,6 +3,19 @@ void timKiemThongTin_tg(const vector<Sach*>& danhSachSach, const string& TimKiem
     bool timThay = false;
 
     cout << "Thong tin cac sach tim thay:\n\n" << endl;
+    cout << "+" << setfill('-') << setw(135) << "-" << "+" << endl;
+    cout << setfill(' ');
+    cout << "|" << setw(10) << left << "MSS";
+    cout << "|" << setw(10) << left << "NAME";
+    cout << "|" << setw(10) << left << "TOPIC";
+    cout << "|" << setw(10) << left << "TG";
+    cout << "|" << setw(15) << left << "NXB";
+    cout << "|" << setw(15) << left << "DATEXB";
+    cout << "|" << setw(15) << left << "STA";
+    cout << "|" << setw(5) << left << "ST";
+    cout << "|" << setw(5) << left << "SBL";
+    cout << "|" << setw(15) << left << "MUON";
+    cout << "|" << setw(15) << left << "TRA" << "|" << endl;
     for (const auto& Sach : danhSachSach) {
         if (Sach->getTacGia() == TimKiemTG) {
             Sach->hienThiThongTin();
@@ -19,6 +32,19 @@ void timKiemThongTin_ma(const vector<Sach*>& danhSachSach, const string& ma_sach
     bool timThay = false;
 
     cout << "Thong tin cac sach tim thay:\n\n" << endl;
+    cout << "+" << setfill('-') << setw(135) << "-" << "+" << endl;
+    cout << setfill(' ');
+    cout << "|" << setw(10) << left << "MSS";
+    cout << "|" << setw(10) << left << "NAME";
+    cout << "|" << setw(10) << left << "TOPIC";
+    cout << "|" << setw(10) << left << "TG";
+    cout << "|" << setw(15) << left << "NXB";
+    cout << "|" << setw(15) << left << "DATEXB";
+    cout << "|" << setw(15) << left << "STA";
+    cout << "|" << setw(5) << left << "ST";
+    cout << "|" << setw(5) << left << "SBL";
+    cout << "|" << setw(15) << left << "MUON";
+    cout << "|" << setw(15) << left << "TRA" << "|" << endl;
     for (const auto& Sach : danhSachSach) {
         if (Sach->getMaSoSach() == ma_sach) {
             Sach->hienThiThongTin();
@@ -35,6 +61,19 @@ void timKiemThongTin_nxb(const vector<Sach*>& danhSachSach, const string& nxb) {
     bool timThay = false;
 
     cout << "Thong tin cac sach tim thay:\n\n" << endl;
+    cout << "+" << setfill('-') << setw(135) << "-" << "+" << endl;
+    cout << setfill(' ');
+    cout << "|" << setw(10) << left << "MSS";
+    cout << "|" << setw(10) << left << "NAME";
+    cout << "|" << setw(10) << left << "TOPIC";
+    cout << "|" << setw(10) << left << "TG";
+    cout << "|" << setw(15) << left << "NXB";
+    cout << "|" << setw(15) << left << "DATEXB";
+    cout << "|" << setw(15) << left << "STA";
+    cout << "|" << setw(5) << left << "ST";
+    cout << "|" << setw(5) << left << "SBL";
+    cout << "|" << setw(15) << left << "MUON";
+    cout << "|" << setw(15) << left << "TRA" << "|" << endl;
     for (const auto& Sach : danhSachSach) {
         if (Sach->getNhaXuatBan() == nxb) {
             Sach->hienThiThongTin();
@@ -315,6 +354,7 @@ int main() {
                 cout << "\t\t\t\t2.tim kiem theo ma sach" << endl;
                 cout << "\t\t\t\t3.tim kem theo nha xuat ban" << endl;
                 cout << "\t\t\t\t4.quay lai" << endl;
+                cout << "\t\t\t\t5.exitnow" << endl;
                 cout << "\t\t\t\t============================" << endl;
                 cout << "\t\t\t\tNhap lua chon: ";
                 cin >> choice4;
@@ -349,11 +389,16 @@ int main() {
                 case 4: {
                     break;
                 }
+                case 5: {
+                    cout << "\t\t\t\tTHANKS!" << endl;
+                    exit(1);
+                    break;
+                }
                 default:
                     cout << "\n\t\t\t\tMOI NHAP LAI LUA CHON" << endl;
                     break;
                 }
-            } while (choice4 != 4);
+            } while (choice4 != 5);
             break;
         }
         case 5: {
@@ -365,6 +410,7 @@ int main() {
                 cout << "\t\t\t\t1.thong ke danh sach giam dan so trang sach muon doc" << endl;
                 cout << "\t\t\t\t2.thong ke danh sach giam dan so trang sach muon ve" << endl;
                 cout << "\t\t\t\t3.thoat" << endl;
+                cout << "\t\t\t\t4.exitnow" << endl;
                 cout << "\t\t\t\t==========================================================" << endl;
                 cout << "\t\t\t\tmoi nhap lua chon: ";
                 cin >> choice5;
@@ -387,6 +433,19 @@ int main() {
                         // Bubble Sort để sắp xếp danh sách
                         sapXepTheoSoTrangSachMuonDocGiamDan(danhsachsach);
                         cout << "\t\t\t\t============DACH SACH SACH MUON DOC GIAM DAN THEO SO TRANG========\n\n" << endl;
+                        cout << "+" << setfill('-') << setw(135) << "-" << "+" << endl;
+                        cout << setfill(' ');
+                        cout << "|" << setw(10) << left << "MSS";
+                        cout << "|" << setw(10) << left << "NAME";
+                        cout << "|" << setw(10) << left << "TOPIC";
+                        cout << "|" << setw(10) << left << "TG";
+                        cout << "|" << setw(15) << left << "NXB";
+                        cout << "|" << setw(15) << left << "DATEXB";
+                        cout << "|" << setw(15) << left << "STA";
+                        cout << "|" << setw(5) << left << "ST";
+                        cout << "|" << setw(5) << left << "SBL";
+                        cout << "|" << setw(15) << left << "MUON";
+                        cout << "|" << setw(15) << left << "TRA" << "|" << endl;
                         for (const auto& sach : danhsachsach) {
                             SachMuonDoc* sachmuondoc = dynamic_cast<SachMuonDoc*>(sach);
                             if (sachmuondoc != nullptr) {
@@ -403,6 +462,19 @@ int main() {
                             ofstream outputfile("hienthi.txt");
                             if (outputfile.is_open()) {
                                 outputfile << "\n\t\t\tHIEN THI DANH SACH MUON DOC TANG GIAM DAN THEO SO TRANG\n\n" << endl;
+                                outputfile << "+" << setfill('-') << setw(135) << "-" << "+" << endl;
+                                outputfile << setfill(' ');
+                                outputfile << "|" << setw(10) << left << "MSS";
+                                outputfile << "|" << setw(10) << left << "NAME";
+                                outputfile << "|" << setw(10) << left << "TOPIC";
+                                outputfile << "|" << setw(10) << left << "TG";
+                                outputfile << "|" << setw(15) << left << "NXB";
+                                outputfile << "|" << setw(15) << left << "DATEXB";
+                                outputfile << "|" << setw(15) << left << "STA";
+                                outputfile << "|" << setw(5) << left << "ST";
+                                outputfile << "|" << setw(5) << left << "SBL";
+                                outputfile << "|" << setw(15) << left << "MUON";
+                                outputfile << "|" << setw(15) << left << "TRA" << "|" << endl;
                                 for (const auto& sach : danhsachsach) {
                                     SachMuonDoc* sachmuondoc = dynamic_cast<SachMuonDoc*>(sach);
                                     if (sachmuondoc != nullptr) {
@@ -440,6 +512,19 @@ int main() {
                         // Bubble Sort để sắp xếp danh sách
                         sapXepTheoSoTrangSachMuonVeGiamDan(danhsachsach);
                         cout << "\t\t\t\t============DACH SACH SACH MUON VE GIAM DAN THEO SO TRANG========\n\n" << endl;
+                        cout << "+" << setfill('-') << setw(135) << "-" << "+" << endl;
+                        cout << setfill(' ');
+                        cout << "|" << setw(10) << left << "MSS";
+                        cout << "|" << setw(10) << left << "NAME";
+                        cout << "|" << setw(10) << left << "TOPIC";
+                        cout << "|" << setw(10) << left << "TG";
+                        cout << "|" << setw(15) << left << "NXB";
+                        cout << "|" << setw(15) << left << "DATEXB";
+                        cout << "|" << setw(15) << left << "STA";
+                        cout << "|" << setw(5) << left << "ST";
+                        cout << "|" << setw(5) << left << "SBL";
+                        cout << "|" << setw(15) << left << "MUON";
+                        cout << "|" << setw(15) << left << "TRA" << "|" << endl;
                         for (const auto& sach : danhsachsach) {
                             SachMuonVe* sachmuonve = dynamic_cast<SachMuonVe*>(sach);
                             if (sachmuonve != nullptr) {
@@ -456,6 +541,19 @@ int main() {
                             ofstream outputfile("hienthi.txt");
                             if (outputfile.is_open()) {
                                 outputfile << "\n\t\t\tHIEN THI DANH SACH MUON VE GIAM DAN THEO SO TRANG\n\n" << endl;
+                                outputfile << "+" << setfill('-') << setw(135) << "-" << "+" << endl;
+                                outputfile << setfill(' ');
+                                outputfile << "|" << setw(10) << left << "MSS";
+                                outputfile << "|" << setw(10) << left << "NAME";
+                                outputfile << "|" << setw(10) << left << "TOPIC";
+                                outputfile << "|" << setw(10) << left << "TG";
+                                outputfile << "|" << setw(15) << left << "NXB";
+                                outputfile << "|" << setw(15) << left << "DATEXB";
+                                outputfile << "|" << setw(15) << left << "STA";
+                                outputfile << "|" << setw(5) << left << "ST";
+                                outputfile << "|" << setw(5) << left << "SBL";
+                                outputfile << "|" << setw(15) << left << "MUON";
+                                outputfile << "|" << setw(15) << left << "TRA" << "|" << endl;
                                 for (const auto& sach : danhsachsach) {
                                     SachMuonVe* sachmuonve = dynamic_cast<SachMuonVe*>(sach);
                                     if (sachmuonve != nullptr) {
@@ -477,11 +575,16 @@ int main() {
                 case 3: {
                     break;
                 }
+                case 4: {
+                    cout << "\t\t\t\tthanks!" << endl;
+                    exit(1);
+                    break;
+                }
                 default:
                     cout << "\n\t\t\t\tMOI NHAP LAI LUA CHON!" << endl;
                     break;
                 }
-            } while (choice5 != 3);
+            } while (choice5 != 4);
             break;
         }
         case 6:
