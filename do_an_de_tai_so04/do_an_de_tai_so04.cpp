@@ -209,19 +209,19 @@ int main() {
                 ofstream outputFile("hienthi.txt");
                 if (outputFile.is_open()) {
                     outputFile << "\t\t\t========= HIEN THI DANH SACH MUON VE =========\n\n" << endl;
-                    cout << "+" << setfill('-') << setw(135) << "-" << "+" << endl;
-                    cout << setfill(' ');
-                    cout << "|" << setw(10) << left << "MSS";
-                    cout << "|" << setw(10) << left << "NAME";
-                    cout << "|" << setw(10) << left << "TOPIC";
-                    cout << "|" << setw(10) << left << "TG";
-                    cout << "|" << setw(15) << left << "NXB";
-                    cout << "|" << setw(15) << left << "DATEXB";
-                    cout << "|" << setw(15) << left << "STA";
-                    cout << "|" << setw(5) << left << "ST";
-                    cout << "|" << setw(5) << left << "SBL";
-                    cout << "|" << setw(15) << left << "MUON";
-                    cout << "|" << setw(15) << left << "TRA" << "|" << endl;
+                    outputFile << "+" << setfill('-') << setw(135) << "-" << "+" << endl;
+                    outputFile << setfill(' ');
+                    outputFile << "|" << setw(10) << left << "MSS";
+                    outputFile << "|" << setw(10) << left << "NAME";
+                    outputFile << "|" << setw(10) << left << "TOPIC";
+                    outputFile << "|" << setw(10) << left << "TG";
+                    outputFile << "|" << setw(15) << left << "NXB";
+                    outputFile << "|" << setw(15) << left << "DATEXB";
+                    outputFile << "|" << setw(15) << left << "STA";
+                    outputFile << "|" << setw(5) << left << "ST";
+                    outputFile << "|" << setw(5) << left << "SBL";
+                    outputFile << "|" << setw(15) << left << "MUON";
+                    outputFile << "|" << setw(15) << left << "TRA" << "|" << endl;
                     for (const auto& sach : danhsachsach) {
                         SachMuonVe* sachmuonve = dynamic_cast<SachMuonVe*>(sach);
                         if (sachmuonve != nullptr) {
@@ -245,6 +245,19 @@ int main() {
             }
             else {
                 cout << "\n\n\t\t\t\t============DACH SACH MUON DOC========\n\n" << endl;
+                cout << "+" << setfill('-') << setw(135) << "-" << "+" << endl;
+                cout << setfill(' ');
+                cout << "|" << setw(10) << left << "MSS";
+                cout << "|" << setw(10) << left << "NAME";
+                cout << "|" << setw(10) << left << "TOPIC";
+                cout << "|" << setw(10) << left << "TG";
+                cout << "|" << setw(15) << left << "NXB";
+                cout << "|" << setw(15) << left << "DATEXB";
+                cout << "|" << setw(15) << left << "STA";
+                cout << "|" << setw(5) << left << "ST";
+                cout << "|" << setw(5) << left << "SBL";
+                cout << "|" << setw(15) << left << "MUON";
+                cout << "|" << setw(15) << left << "TRA" << "|" << endl;
                 for (const auto& sach : danhsachsach) {
                     SachMuonDoc* sachmuondoc = dynamic_cast<SachMuonDoc*>(sach);
                     if (sachmuondoc != nullptr) {
@@ -263,6 +276,19 @@ int main() {
                 ofstream outputFile("hienthi.txt");
                 if (outputFile.is_open()) {
                     outputFile << "\t\t\t========= Hien thi danh sach muon doc =========\n\n" << endl;
+                    outputFile << "+" << setfill('-') << setw(135) << "-" << "+" << endl;
+                    outputFile << setfill(' ');
+                    outputFile << "|" << setw(10) << left << "MSS";
+                    outputFile << "|" << setw(10) << left << "NAME";
+                    outputFile << "|" << setw(10) << left << "TOPIC";
+                    outputFile << "|" << setw(10) << left << "TG";
+                    outputFile << "|" << setw(15) << left << "NXB";
+                    outputFile << "|" << setw(15) << left << "DATEXB";
+                    outputFile << "|" << setw(15) << left << "STA";
+                    outputFile << "|" << setw(5) << left << "ST";
+                    outputFile << "|" << setw(5) << left << "SBL";
+                    outputFile << "|" << setw(15) << left << "MUON";
+                    outputFile << "|" << setw(15) << left << "TRA" << "|" << endl;
                     for (const auto& sach : danhsachsach) {
                         SachMuonDoc* sachmuondoc = dynamic_cast<SachMuonDoc*>(sach);
                         if (sachmuondoc != nullptr) {
